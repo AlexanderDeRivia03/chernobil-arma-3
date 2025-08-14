@@ -1,0 +1,1 @@
+execVM "ambienceloop.sqf";

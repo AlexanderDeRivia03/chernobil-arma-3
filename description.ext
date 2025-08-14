@@ -1,0 +1,33 @@
+class CfgSounds {
+    sounds[] = {ambience, theme1, theme2, static, impact};
+
+    class ambience {
+        name = "ambience";
+        sound[] = {"sounds\ambience.ogg", 0.8, 0.7};
+        titles[] = {};
+    };
+
+    class theme1 {
+        name = "theme1";
+        sound[] = {"sounds\theme1.ogg", 1.0, 1.0};
+        titles[] = {};
+    };
+
+    class theme2 {
+        name = "theme2";
+        sound[] = {"sounds\theme2.ogg", 1.0, 1.0};
+        titles[] = {};
+    };
+
+    class static {
+        name = "static";
+        sound[] = {"sounds\static.ogg", 0.6, 1.0};
+        titles[] = {};
+    };
+
+    class impact {
+        name = "impact";
+        sound[] = {"sounds\impact.ogg", 1.0, 1.0};
+        titles[] = {};
+    };
+};
