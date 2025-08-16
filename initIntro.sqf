@@ -1,23 +1,27 @@
 [] spawn {
     if (!hasInterface) exitWith {};
-	titleText ["", "BLACK IN", 7];
-    playSound "ambience";
- sleep 1.4;
-    [
-        ["Afueras de Prypiat", 2, 1, 2],
-        ["5:10AM", 2, 1, 2]
-    ] spawn BIS_fnc_EXP_camp_SITREP;
 
-
-
+    // Crear cámara antes del BLACK IN
     _cam = "camera" camCreate [13315, 24386.7, 3];
     _cam cameraEffect ["internal", "BACK"];
     showCinemaBorder true;
     _cam camSetFOV 0.7;
     _cam setDir 61;
     _cam camCommit 0;
-    sleep 15;
 
+    // Ahora aplicar el BLACK IN
+    titleText ["", "BLACK IN", 3];
+    playSound "ambience";
+    sleep 1.2;
+
+    // Mostrar SITREP
+    [
+        ["Afueras de Prypiat", 2, 1, 2],
+        ["5:10AM", 2, 1, 2]
+    ] spawn BIS_fnc_EXP_camp_SITREP;
+
+    // Movimiento de cámara
+    sleep 15;
     _cam camSetPos [13607.1, 24419, 5];
     _cam setDir 278;
     _cam camCommit 0;
@@ -32,6 +36,7 @@
     _cam cameraEffect ["terminate", "BACK"];
     camDestroy _cam;
 
+    // Cámara en criatura
     _cam = "camera" camCreate position criatura1;
     _cam camSetFOV 0.5;
     _cam camSetTarget (position criatura1 vectorAdd (vectorDir criatura1 vectorMultiply 10));
